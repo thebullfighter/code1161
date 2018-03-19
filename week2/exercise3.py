@@ -161,6 +161,13 @@ def loops_4():
 
 
 def loops_5():
+    return_list = []
+    for i in range(10):
+            temp_list = []
+            for n in range(5):
+                temp_list.append("(i"+str(i)+", j"(n)+")")
+            return_list.append(temp_list)
+    return return_list
 
     """Make the coordinates of the block.
 
