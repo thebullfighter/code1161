@@ -217,7 +217,17 @@ def loops_6():
 
 
 def loops_7():
-    
+    column = []
+    for x in range(5):
+        row = []
+        for y in range(9):
+            if abs(y-4) <=x:
+                row.append("*")
+            else:
+                row.append(" ")
+        column.append(row)
+    return column
+
     """Make a pyramid.
 
     Return this:
