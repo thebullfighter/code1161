@@ -3,6 +3,8 @@
 
 
 def is_odd(a_number):
+    return a_number % 2 != 0
+
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
@@ -11,6 +13,18 @@ def is_odd(a_number):
 
 
 def fix_it(moves=True, should_move=True):
+    if moves:
+        if should_move:
+            return "No Problem"
+        else:
+            return "Duct Tape"
+    else:
+        if should_move:
+            return "WD-40"
+        else:
+            return "No Problem"
+
+
     """Decide what to do.
 
     Using the engineering flowchart (in week2 folder engineeringFlowchart.png)
@@ -25,6 +39,11 @@ def fix_it(moves=True, should_move=True):
 
 
 def loops_1a():
+    a_list = []
+    for i in range (10): 
+        a_list.append("*")
+    return a_list
+
     """Make 10 stars.
 
     Using a for loop
@@ -36,6 +55,11 @@ def loops_1a():
 
 
 def loops_1c(number_of_items=5, symbol="#"):
+    a_list = []
+    for i in range (number_of_items):
+        a_list.append(symbol)
+    return a_list
+
     """Respond to variables.
 
     using any method
@@ -47,6 +71,15 @@ def loops_1c(number_of_items=5, symbol="#"):
 
 
 def loops_2():
+    a_list = []
+    for i in range(10):
+            row = []
+            for n in range(10):
+                row.append("*")
+            a_list.append(row)
+    return a_list
+
+
     """Make a big square starfield.
 
     return a list of 10 items, each one a list of 10 items,
@@ -68,6 +101,14 @@ def loops_2():
 
 
 def loops_3():
+    return_list = []
+    for i in range(10):
+        temp_list = []
+        for n in range(10):
+            temp_list.append(str(i))
+        return_list.append(temp_list)
+    return return_list
+
     """Make a rising block of numbers.
 
     Return this:
@@ -92,6 +133,14 @@ def loops_3():
 
 
 def loops_4():
+    return_list = []
+    for i in range(10):
+        temp_list = []
+        for n in range(10):
+            temp_list.append(str(n))
+        return_list.append(temp_list)
+    return return_list
+
     """Make a block of numbers that rises left to right.
 
     Return this:
@@ -112,6 +161,7 @@ def loops_4():
 
 
 def loops_5():
+
     """Make the coordinates of the block.
 
     Return this:
@@ -137,6 +187,13 @@ def loops_5():
 
 
 def loops_6():
+    a_list = []
+    for i in range(10):
+        a_list.append([])
+        for n in range(0,i+1):
+            a_list[i].append(str(n))
+    return a_list
+
     """Make a wedge of numbers.
 
     Return this:
@@ -160,6 +217,7 @@ def loops_6():
 
 
 def loops_7():
+    
     """Make a pyramid.
 
     Return this:
