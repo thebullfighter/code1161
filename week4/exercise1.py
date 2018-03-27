@@ -4,6 +4,8 @@
 import json
 import os
 import requests
+import inspect
+import sys
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -33,11 +35,11 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-    data = json.loads(json_data)["results"][0]
-    pstcodeIDSum = int(data["location"]["postcode"]) + int(data["id"]["value"])
-    return {"lastName":       data["name"]["last"],
-            "password":       data["login"]["password"],
-            "postcodePlusID": pstcodeIDSum
+
+    data = json.loads(json_data)
+    return {"lastName":       None,
+            "password":       None,
+            "postcodePlusID": None
             }
 
 
@@ -120,28 +122,15 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    gcode = str(open("./Trispokedovetiles(laser).gcode", 'r').read())
-    charCount = 0
-    onOffCounter = 0
-    while charCount < len(gcode):
-        if gcode[charCount:charCount+6] == "M10 P1":
-            onOffCounter += 1
-        charCount += 1
-        # print(str(charCount), str(onOffCounter))
-        # print(str(gcode[charCount:charCount+6]))
-    try:
-        os.remove("lasers.pew")
-        print('File removed!')
-    except Exception:
-        print("Hmmm didn't work... Maybe the file didn't already exist?")
-    lasersFile = open("lasers.pew", 'w+')
-    lasersFile.write(str(onOffCounter))
+    pass
 
 
 if __name__ == "__main__":
-    print([len(w) for w in wordy_pyramid()])
-    print(get_some_details())
-    print(wunderground())
-    diarist()
+    functions = [obj for name,obj in inspect.getmembers(sys.modules[__name__]) if (inspect.isfunction(obj))]
+    for function in functions:
+        try:
+            print(function())
+        except Exception as e:
+            print(e)
     if not os.path.isfile("lasers.pew"):
         print('diarist did not create lasers.pew')
