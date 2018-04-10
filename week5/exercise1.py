@@ -49,7 +49,18 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    pass
+    message_list = []
+
+    countDown = start
+    while (countDown >= stop):
+        if countDown != stop:
+            res = str(message) +" " + str(countDown)
+            message.list.append(res)
+            countDown = countDown - 1
+        else:
+            res = str(message) +" " + str(countDown)
+            message.list.append(res)
+            return message_list
 
 
 # TRIANGLES
@@ -62,24 +73,34 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    pass
+    triangle_hypotenuse = (base**2 + height**2)**(1/2.0)
+    return triangle_hypotenuse
 
 
 def calculate_area(base, height):
-    pass
+    triangle_area = (base*height)/2
+    return triangle_area
 
 
 def calculate_perimeter(base, height):
-    pass
+    hypotenuse = (base**2 + height**2)**(1/2.0)
+    triangle_perimeter = (base + height + hypotenuse)
+    return triangle_perimeter
 
 
 def calculate_aspect(base, height):
-    pass
+    triangle_aspect = (base/height)
+    return triangle_aspect
 
 
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
+    triangle_hypotenuse = (base**2 + height**2)**(1/2.0)
+    triangle_area = (base*height)/2
+    hypotenuse = (base**2 + height**2)**(1/2.0)
+    triangle_perimeter = (base + height + hypotenuse)
+    triangle_aspect = (base/height)
     return {"area": None,
             "perimeter": None,
             "height": None,
@@ -169,7 +190,9 @@ def wordy_pyramid():
 
 
 def get_a_word_of_length_n(length):
-    pass
+    a = "python is hard to learn"
+    return len(a)
+    
 
 
 def list_of_words_with_lengths(list_of_lengths):

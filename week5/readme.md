@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+"""I know how to calculate the geometry but I don't know how to apply it to python language. I feel that it's a matter of getting all the previous weeks exercises and just applying it to now but that's easy for me to say and harder to do."""

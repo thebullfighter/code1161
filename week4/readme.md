@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+"""I still can't properly grasp python ... I strongly believe that it's because I don't see an immediate purpose for it. I feel that if you show us how to use it in grasshopper, I may just get it ... but I could be wrong and I ate that portuguese tart for nothing."""
