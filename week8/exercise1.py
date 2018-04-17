@@ -17,7 +17,7 @@ def greet(name="Towering Timmy"):
     return a string of "Hello" and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    pass
+    return ("Hello" +name)
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -26,7 +26,13 @@ def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 5
     """
+    listSize = int(input_list())
+    a_list = []
+    for i in range (1, 8): 
+        a_list.append("3")
+    return a_list
     pass
+
 
 
 def fizz_buzz():
@@ -44,7 +50,15 @@ def fizz_buzz():
     if it is. E.g. [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, ...]
     """
     fizzBuzzList = []
-    # your code here
+    for i in range (1,101):
+        if i%3==0 and i%5==0:
+            fizzBuzzList.append("FizzBuzz")
+        elif i%3==0:
+            fizzBuzzList.append("Fizz")
+        elif i%5==0:
+            fizzBuzzList.append("Buzz")
+        else:
+            fizzBuzzList.append(i) 
     return fizzBuzzList
 
 
@@ -57,7 +71,9 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: conside using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-    pass
+    pipe = "|"
+    text = (input_string)
+    return print ("|" + pipe.join(text) + "|")
 
 
 def pet_filter(letter="a"):
@@ -70,7 +86,9 @@ def pet_filter(letter="a"):
             "bali cattle", "gayal", "turkey", "goldfish", "rabbit", "koi",
             "canary", "society finch", "fancy mouse", "siamese fighting fish",
             "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"]
-    pass
+
+    letterfilter = [i for i in pets if letter in i] 
+    return letterfilter
 
 
 def best_letter_for_pets():
@@ -113,7 +131,13 @@ def make_filler_text_dictionary():
     """
     
     import requests
-    return
+    for i in range (3,8):
+        Url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=7&maxLength=7&limit=1"
+        R = requests.get(url)
+        Response_json = json.loads(r.text)
+        Return response_json[0]['word']
+        word_dictionary[number].append(new_word)
+    return word_dictionary
 
 
 def random_filler_text(number_of_words=200):
@@ -128,6 +152,10 @@ def random_filler_text(number_of_words=200):
         see line 77 of week4/hangman_leadboard.py for an example.
     """
     import random
+    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=3&maxLength=10&limit=1"
+    r = requests.get(url)
+    response_json = json.loads(r.text)
+    return response_json[0]['word']
     pass
 
 

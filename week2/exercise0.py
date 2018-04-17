@@ -28,7 +28,7 @@ def adder(a_number, another_number):
 
 
 def shout(a_string):
-    return str.upper(a_string)
+    return a_string.upper()
     """Return a string in uppercase.
 
     look up the docs for string methods. Either in the official docs, here:
