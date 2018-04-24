@@ -156,7 +156,6 @@ def random_filler_text(number_of_words=200):
     r = requests.get(url)
     response_json = json.loads(r.text)
     return response_json[0]['word']
-    pass
 
 
 def fast_filler(number_of_words=200):
