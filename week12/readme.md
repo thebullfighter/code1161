@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Data visualisations for our open data project is proving to be challenging ... I don't know enough of how to do an impressive graph and I've had to resort to telling a story the best way I know how.
